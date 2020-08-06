@@ -6,8 +6,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
 import java.util.Map;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 //import static spark.Spark.*;
 
@@ -68,9 +67,9 @@ public class App {
                 }*/
 
             });
-            //port(getHerokuAssignedPort());
+           // port(getHerokuAssignedPort());
         }
-   /* static int getHerokuAssignedPort() {
+   /*static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
