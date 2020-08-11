@@ -13,16 +13,6 @@
 <h1>Greet me</h1>
 </header>
 
-{{greeting}}
-<div>
-    <ul>
-        {{#each users}}
-        <li>{{@key}} greeted {{this}} time(s)</li>
-        {{/each}}
-     </ul>
-</div>
-
-
 <form action="/hello" method="post" >
     <input type="text" name="username">
     <input type="submit" ><br>
@@ -34,5 +24,13 @@
     <label for="language">Afrikaans</label><br>
 </form>
 
+{{greeting}}
+<div>
+    <ul>
+        {{#each users}}
+            <li>{{@key}} greeted {{this}} time(s)</li>
+        {{/each}}
+    </ul>
+</div>
 </body>
 </html>
