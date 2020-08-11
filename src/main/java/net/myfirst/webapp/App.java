@@ -26,6 +26,9 @@ public class App {
 
             get("/hello", (req, res) -> {
                 Map<String, Object> map = new HashMap<>();
+
+                map.put("users" , users);
+                map.put("counter" , users.size());
                 return new ModelAndView(map, "hello.handlebars");
             }, new HandlebarsTemplateEngine());
 
@@ -35,7 +38,7 @@ public class App {
                 // create the greeting message
                 String username = req.queryParams("username");
 
-                String greeting = "Hello" +  username;
+                String greeting = ""  +  username;
 
               //  System.out.println(req.queryParams("language"));
 
@@ -47,6 +50,7 @@ public class App {
                 }
                 // put it in the map which is passed to the template - the value will be merged into the template
                 map.put("greeting", greeting);
+                map.put("counter" , users.size());
                 map.put("users", users);
 
                 return new HandlebarsTemplateEngine().render(new ModelAndView(map, "hello.handlebars"));
@@ -67,7 +71,6 @@ public class App {
                     default:
                         System.out.println("correct language selected");
                 }*/
-
             });
 
         }
